@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/stocks")
 @CrossOrigin(
-    origins = "http://localhost:5173",
+    origins = "*",
     allowedHeaders = "*",
     methods = {RequestMethod.GET, RequestMethod.OPTIONS}
 )
