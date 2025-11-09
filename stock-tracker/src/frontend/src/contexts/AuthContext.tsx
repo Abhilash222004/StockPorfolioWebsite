@@ -45,7 +45,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const login = async (username: string, password: string): Promise<boolean> => {
     try {
-      const response = await fetch('http://localhost:8083/api/auth/login', {
+      const response = await fetch('https://stock-tracker-gze4bsbjbjdffvgq.southeastasia-01.azurewebsites.net/api/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
 
         // Fetch portfolio after successful login
-        const portfolioResponse = await fetch(`http://localhost:8083/api/portfolio/${username}`);
+        const portfolioResponse = await fetch(`https://stock-tracker-gze4bsbjbjdffvgq.southeastasia-01.azurewebsites.net/api/portfolio/${username}`);
         if (portfolioResponse.ok) {
           const portfolioData = await portfolioResponse.json();
           // Convert the map from backend to an array of Stock objects
@@ -93,7 +93,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const signup = async (username: string, password: string): Promise<boolean> => {
     try {
-      const response = await fetch('http://localhost:8083/api/auth/signup', {
+      const response = await fetch('https://stock-tracker-gze4bsbjbjdffvgq.southeastasia-01.azurewebsites.net/api/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

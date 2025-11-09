@@ -19,7 +19,7 @@ export default function BuyStockModal({ onClose, onSuccess }: BuyStockModalProps
     if (symbol.length > 0) {
       setIsLoading(true);
       try {
-        const response = await fetch(`http://localhost:8083/api/stocks/${symbol}/price`);
+        const response = await fetch(`https://stock-tracker-gze4bsbjbjdffvgq.southeastasia-01.azurewebsites.net/api/stocks/${symbol}/price`);
         if (response.ok) {
           const price = await response.json();
           setStockInfo({ name: symbol, price });
@@ -50,7 +50,7 @@ export default function BuyStockModal({ onClose, onSuccess }: BuyStockModalProps
     setIsLoading(true);
 
     try {
-      const response = await fetch(`http://localhost:8083/api/portfolio/${user?.name}/add`, {
+      const response = await fetch(`https://stock-tracker-gze4bsbjbjdffvgq.southeastasia-01.azurewebsites.net/api/portfolio/${user?.name}/add`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
